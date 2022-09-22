@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
+/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
@@ -80,7 +81,7 @@ Madhya Pradesh, Rajasthan, West Bengal, Assam, Tripura
             </div>
             <div class="about-stats">
                 <div class="main-title">
-                    <h2>My <span>SKILLS</span><span class="bg-text">my stats</span></h2>
+                    <h2>My <span>SKILLS</span><span class="bg-text"></span></h2>
                 </div>
                 <div id="container">
                     <div>
@@ -136,8 +137,22 @@ Madhya Pradesh, Rajasthan, West Bengal, Assam, Tripura
                     
                 </div>
                 
+                <div>
+                    <div class="main-title">
+                        <h2>GitHub<span> Calendar</span><span class="bg-text"></span></h2>
+                    </div>
+
+                    <div class="calendar">
+                        <!-- Loading stuff -->
+                        Loading the data just for you.
+                    </div>
+
+                </div>
+
+
+
                 <div class="main-title">
-                    <h2>MY <span>TIMELINE</span><span class="bg-text">my stats</span></h2>
+                    <h2>MY <span>TIMELINE</span><span class="bg-text"></span></h2>
                 </div>
             <div class="timeline">
                 <div class="timeline-item">
@@ -382,3 +397,21 @@ Madhya Pradesh, Rajasthan, West Bengal, Assam, Tripura
     <script src="app.js"></script>
 </body>
 </html>
+
+<script
+  src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js">
+</script>
+
+<script>
+    GitHubCalendar(".calendar", "Shubhambhadouria");
+
+    // or enable responsive functionality:
+    GitHubCalendar(".calendar", "Shubhambhadouria", { responsive: true });
+
+    // Use a proxy
+    GitHubCalendar(".calendar", "Shubhambhadouria", {
+       proxy (username) {
+         return fetch(`https://your-proxy.com/github?user=${Shubhambhadouria}`)
+       }
+    }).then(r => r.text())
+</script>
